@@ -182,7 +182,8 @@ function sendToS3(options, directory, target, callback) {
   s3client = knox.createClient({
     key: options.key,
     secret: options.secret,
-    bucket: options.bucket
+    bucket: options.bucket,
+    region: 'us-west-2'
   });
 
   log('Attemping to upload ' + target + ' to the ' + options.bucket + ' s3 bucket');
